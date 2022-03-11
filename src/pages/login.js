@@ -31,7 +31,7 @@ class Login extends Component {
     }
   }
 
-  handleClick = async () => {
+  handleLogin = async () => {
     const { name } = this.state;
     this.setState({
       loading: true,
@@ -64,7 +64,7 @@ class Login extends Component {
             disabled={ buttonDisabled }
             data-testid="login-submit-button"
             type="button"
-            onClick={ this.handleClick }
+            onClick={ this.handleLogin }
           >
             Entrar
           </button>
