@@ -52,7 +52,7 @@ class SearchBar extends Component {
       return <Loading />;
     }
     return (
-      <div data-testid="page-search">
+      <div>
         <input
           type="search"
           id="search"
