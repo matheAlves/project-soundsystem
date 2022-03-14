@@ -41,11 +41,15 @@ class Album extends Component {
       return (
         <div data-testid="page-album">
           <Header />
-          <h1 data-testid="artist-name">{albumInfo.artistName}</h1>
-          <h2 data-testid="album-name">{albumInfo.collectionName}</h2>
-          {loading
-            ? <Loading />
-            : <MusicCard albumTracks={ albumTracks } />}
+          <section className="track-listing">
+            <h1 data-testid="artist-name">{albumInfo.artistName}</h1>
+            <h2 data-testid="album-name">{albumInfo.collectionName}</h2>
+            <img src={ albumInfo.artworkUrl100 } alt="album" />
+            {loading
+              ? <Loading />
+              : <MusicCard albumTracks={ albumTracks } />}
+          </section>
+
         </div>
       );
     }

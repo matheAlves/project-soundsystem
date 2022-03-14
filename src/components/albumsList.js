@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import './style.css';
 
 class AlbumsList extends Component {
   render() {
@@ -9,14 +10,19 @@ class AlbumsList extends Component {
       return (
         <section>
           <h1>{`Resultado de álbuns de: ${search}`}</h1>
-          {albums.map((album) => (
-            <Link
-              key={ album.collectionId }
-              to={ `/album/${album.collectionId}` }
-              data-testid={ `link-to-album-${album.collectionId}` }
-            >
-              <p>{album.collectionName}</p>
-            </Link>))}
+          <div className="space-evenly">
+            {albums.map((album) => (
+              <Link
+                key={ album.collectionId }
+                to={ `/album/${album.collectionId}` }
+                className="album-card"
+                data-testid={ `link-to-album-${album.collectionId}` }
+              >
+                <p className="font-small">{album.collectionName}</p>
+                <img src={ album.artworkUrl100 } alt="album" />
+              </Link>))}
+          </div>
+
         </section>
 
       );

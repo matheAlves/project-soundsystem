@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './loading';
-import './header.css';
+import './style.css';
 
 class Header extends Component {
   constructor() {
@@ -33,7 +33,7 @@ class Header extends Component {
     return (
       <header
         data-testid="header-component"
-        className="header"
+        className="space-evenly"
       >
         <Link
           to="/search"

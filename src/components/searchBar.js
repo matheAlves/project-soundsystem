@@ -52,23 +52,25 @@ class SearchBar extends Component {
       return <Loading />;
     }
     return (
-      <div>
-        <input
-          type="search"
-          id="search"
-          name="search"
-          placeholder="Nome do artista"
-          data-testid="search-artist-input"
-          onChange={ this.handleChange }
-        />
-        <button
-          type="button"
-          data-testid="search-artist-button"
-          disabled={ isButtonDisabled }
-          onClick={ this.handleSubmit }
-        >
-          Pesquisar
-        </button>
+      <div className="space-evenly">
+        <form>
+          <input
+            type="search"
+            id="search"
+            name="search"
+            placeholder="Nome do artista"
+            data-testid="search-artist-input"
+            onChange={ this.handleChange }
+          />
+          <button
+            type="button"
+            data-testid="search-artist-button"
+            disabled={ isButtonDisabled }
+            onClick={ this.handleSubmit }
+          >
+            Pesquisar
+          </button>
+        </form>
       </div>
     );
   }

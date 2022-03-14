@@ -48,7 +48,6 @@ class FavoriteChkBox extends Component {
   render() {
     const { track } = this.props;
     const { checked, loading } = this.state;
-
     if (loading) {
       return (
         <Loading />
