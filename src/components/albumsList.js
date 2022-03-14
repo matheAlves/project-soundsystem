@@ -15,7 +15,7 @@ class AlbumsList extends Component {
               to={ `/album/${album.collectionId}` }
               data-testid={ `link-to-album-${album.collectionId}` }
             >
-              {album.collectionName}
+              <p>{album.collectionName}</p>
             </Link>))}
         </section>
 
