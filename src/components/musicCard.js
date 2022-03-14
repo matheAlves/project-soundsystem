@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import FavoriteChkBox from './favoriteChkBox';
 
 class MusicCard extends Component {
   render() {
-    const { album } = this.props;
-    const [albumInfo, ...albumTracks] = album;
+    const { albumTracks } = this.props;
     return (
       <div>
-        <h1 data-testid="artist-name">{albumInfo.artistName}</h1>
-        <h2 data-testid="album-name">{albumInfo.collectionName}</h2>
         {albumTracks.map((track) => (
           <div key={ track.trackId }>
             <p>{`${track.trackName}`}</p>
@@ -22,8 +20,12 @@ class MusicCard extends Component {
               <code>audio</code>
               .
             </audio>
+            <FavoriteChkBox
+              albumTracks={ albumTracks }
+              track={ track }
+              updateLoading={ this.updateLoading }
+            />
           </div>
-
         ))}
       </div>
     );
@@ -31,7 +33,7 @@ class MusicCard extends Component {
 }
 
 MusicCard.propTypes = {
-  album: PropTypes.arrayOf(PropTypes.object).isRequired,
+  albumTracks: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default MusicCard;

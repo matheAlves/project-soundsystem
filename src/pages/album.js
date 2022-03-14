@@ -36,14 +36,16 @@ class Album extends Component {
 
   render() {
     const { album, loading } = this.state;
-
     if (album.length > 0) {
+      const [albumInfo, ...albumTracks] = album;
       return (
         <div data-testid="page-album">
           <Header />
+          <h1 data-testid="artist-name">{albumInfo.artistName}</h1>
+          <h2 data-testid="album-name">{albumInfo.collectionName}</h2>
           {loading
             ? <Loading />
-            : <MusicCard album={ album } />}
+            : <MusicCard albumTracks={ albumTracks } />}
         </div>
       );
     }
