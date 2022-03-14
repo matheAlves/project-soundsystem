@@ -74,7 +74,9 @@ class FavoriteChkBox extends Component {
 
 FavoriteChkBox.propTypes = {
   albumTracks: PropTypes.arrayOf(PropTypes.object).isRequired,
-  track: PropTypes.objectOf(PropTypes.string).isRequired,
+  track: PropTypes.shape({
+    trackId: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default FavoriteChkBox;
