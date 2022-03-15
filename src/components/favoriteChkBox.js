@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Loading from './loading';
-import { getFavoriteSongs, addSong } from '../services/favoriteSongsAPI';
+import { getFavoriteSongs, addSong, removeSong } from '../services/favoriteSongsAPI';
 
 class FavoriteChkBox extends Component {
   constructor() {
@@ -17,22 +17,29 @@ class FavoriteChkBox extends Component {
     this.favoriteCheck();
   }
 
-  handleChange = () => {
-    this.favoriteCheck();
-  }
-
   handleClick = async ({ target }) => {
+    const { albumTracks } = this.props;
+    const { id } = target;
     this.setState({
       loading: true,
     });
 
-    const { albumTracks } = this.props;
-    const { id } = target;
-    const favTrack = albumTracks.find((track) => track.trackId === parseInt(id, 10));
-    await addSong(favTrack);
-    this.setState({
-      loading: false,
-    });
+    const favTracks = await getFavoriteSongs();
+
+    const isFav = favTracks.some((track) => track.trackId
+    === parseInt(id, 10));
+
+    if (isFav) {
+      const trackToRemove = albumTracks
+        .find((track) => track.trackId === parseInt(id, 10));
+      await removeSong(trackToRemove);
+      await this.favoriteCheck();
+    } else {
+      const favTrack = albumTracks
+        .find((track) => track.trackId === parseInt(id, 10));
+      await addSong(favTrack);
+      await this.favoriteCheck();
+    }
   }
 
   favoriteCheck = async () => {
@@ -60,7 +67,7 @@ class FavoriteChkBox extends Component {
         Favorita
         <input
           checked={ checked }
-          onChange={ this.handleChange }
+          onChange={ this.handleClick }
           type="checkbox"
           id={ track.trackId }
           data-testid={ `checkbox-music-${track.trackId}` }
