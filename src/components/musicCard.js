@@ -3,10 +3,18 @@ import PropTypes from 'prop-types';
 import FavoriteChkBox from './favoriteChkBox';
 
 class MusicCard extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      // loading: true,
+    };
+  }
+
   render() {
     const { albumTracks } = this.props;
     return (
-      <div>
+      <div className="track-listing">
         {albumTracks.map((track) => (
           <div key={ track.trackId }>
             <p>{`${track.trackName}`}</p>
@@ -21,6 +29,7 @@ class MusicCard extends Component {
               .
             </audio>
             <FavoriteChkBox
+              favTrackListLoad={ this.loaded }
               albumTracks={ albumTracks }
               track={ track }
               updateLoading={ this.updateLoading }

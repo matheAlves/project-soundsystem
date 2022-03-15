@@ -66,8 +66,7 @@ class FavoriteChkBox extends Component {
       >
         Favorita
         <input
-          checked={ checked }
-          onChange={ this.handleClick }
+          defaultChecked={ checked }
           type="checkbox"
           id={ track.trackId }
           data-testid={ `checkbox-music-${track.trackId}` }
