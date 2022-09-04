@@ -14,7 +14,7 @@ class AlbumsList extends Component {
             {albums.map((album) => (
               <Link
                 key={ album.collectionId }
-                to={ `/album/${album.collectionId}` }
+                to={ `/project-soundsystem/album/${album.collectionId}` }
                 className="album-card"
                 data-testid={ `link-to-album-${album.collectionId}` }
               >

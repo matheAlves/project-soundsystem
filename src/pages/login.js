@@ -69,7 +69,7 @@ class Login extends Component {
             Entrar
           </button>
         </form>
-        {redirect ? <Redirect to="/search" /> : ''}
+        {redirect ? <Redirect to="/project-soundsystem/search" /> : ''}
       </div>
     );
   }

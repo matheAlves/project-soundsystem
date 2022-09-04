@@ -36,19 +36,19 @@ class Header extends Component {
         className="space-evenly"
       >
         <Link
-          to="/search"
+          to="/project-soundsystem/search"
           data-testid="link-to-search"
         >
           Search
         </Link>
         <Link
-          to="/favorites"
+          to="/project-soundsystem/favorites"
           data-testid="link-to-favorites"
         >
           Favorites
         </Link>
         <Link
-          to="/profile"
+          to="/project-soundsystem/profile"
           data-testid="link-to-profile"
         >
           Profile
