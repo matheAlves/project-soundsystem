@@ -6,17 +6,17 @@ This is a in-development music app.
 
 ## Features
 ### Search for artists
-  use the search bar to search for an artist's albums
+  Use the search bar to search for an artist's albums
   
 ### Listen to albums
-  click an album to see its tracklist
+  Click an album to see its tracklist
 
-## Favorite tracks
-  you can favorite tracks from an album and see the list in the 'favorites' tab
+### Favorite tracks
+  You can mark tracks as favorite from an album and see the list in the 'favorites' tab
   
 ## Planned features
-- search by song and album
-- profile page
+- Search by song and album
+- Profile page
 
 ## Setup
 ### install dependencies
