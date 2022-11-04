@@ -28,5 +28,5 @@ This is a in-development music app.
 ### `npm start`
 
 ## Reference
-[iTunes Search API](https://chatengine.io/)
+[iTunes Search API](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html)
 
