@@ -1,4 +1,4 @@
-# Chat App
+# Soundsystem
 This is a in-development music app.
 
 ## Demo
