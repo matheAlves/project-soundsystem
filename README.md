@@ -17,6 +17,7 @@ This is a in-development music app.
 ## Planned features
 - Search by song and album
 - Profile page
+- Complete visual overhaul
 
 ## Setup
 ### install dependencies
