@@ -1,3 +1,5 @@
+Originalmente desenvolvido como projeto no curso de desenvolvimento web da Trybe
+
 # Soundsystem
 This is a in-development music app.
 
